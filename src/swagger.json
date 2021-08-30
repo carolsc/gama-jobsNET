@@ -1,0 +1,113 @@
+{
+  "openapi": "3.0.0",
+
+  "info": {
+    "title": "API de registro de profissionais da JobsNET",
+    "description": "Esta API possui quais dados queremos do candidato",
+    "version": "0.0.1"
+  },
+
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": "ambiente de desenvolvimento",
+
+      "url": "http://localhost:5000",
+      "description": "ambiente de produção"
+    }
+  ],
+
+  "paths": {
+    "/register": {
+      "post": {
+        "summary": "Cadastro de candidato",
+        "description": "Recebe CPF, Nome, Data Nascimento, Cep, Logradouro, Número, Bairro, Cidade, Email, Profissão e Celular obrigatórios, além de habilitação, estado civil, e rg",
+        "tags": ["cadastro"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "nome": {
+                    "type": "string"
+                  },
+                  "genero": {
+                    "type": "string"
+                  },
+                  "cep": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "nascimento": {
+                    "type": "string"
+                  },
+                  "cpf": {
+                    "type": "string"
+                  },
+                  "logradouro": {
+                    "type": "string"
+                  },
+                  "numero": {
+                    "type": "string"
+                  },
+                  "complemento": {
+                    "type": "string"
+                  },
+                  "bairro": {
+                    "type": "string"
+                  },
+                  "cidade": {
+                    "type": "string"
+                  },
+                  "uf": {
+                    "type": "string"
+                  },
+                  "profissao": {
+                    "type": "string"
+                  },
+                  "estadocivil": {
+                    "type": "string"
+                  },
+                  "rg": {
+                    "type": "string"
+                  },
+                  "habilitacao": {
+                    "type": "string"
+                  },
+                  "celular": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "1": {
+                  "value": {
+                    "nome": "Caroline Corrêa",
+                    "genero": "Feminino",
+                    "cep": "01001001",
+                    "email": "caroline.santos.correa@gmail.com",
+                    "nascimento": "26-10-1994",
+                    "cpf":"12345678910",
+                    "logradouro": "Praça da Sé",
+                    "numero": "102",
+                    "complemento":"12A",
+                    "bairro": "Centro",
+                    "cidade": "São Paulo",
+                    "uf": "SP - São Paulo",
+                    "profissao": "Desenvolvedora Fullstack",
+                    "estadocivil": "Solteira",
+                    "rg": "123456789",
+                    "habilitacao": "B",
+                    "celular": "11999999999"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
